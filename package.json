@@ -1,0 +1,26 @@
+{
+  "name": "wellness-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server --watch db.json --port 5000 --middlewares ./range.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanalvizo/wellness-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethanalvizo/wellness-dashboard/issues"
+  },
+  "homepage": "https://github.com/ethanalvizo/wellness-dashboard#readme",
+  "dependencies": {
+    "concurrently": "^6.0.1",
+    "json-server": "^0.16.3"
+  }
+}
