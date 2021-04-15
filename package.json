@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "server": "json-server --watch db.json --port 5000 --middlewares ./range.js",
+    "server": "json-server --watch db.json --port 5000 --middlewares ./range.js --no-cors true",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
