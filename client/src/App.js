@@ -10,7 +10,7 @@ import UserEdit from './components/UserEdit';
 
 function App() {
   return (
-    <Admin dataProvider={restProvider('http://localhost:3000')}>
+    <Admin dataProvider={restProvider('https://ethan-fake-rest-api.herokuapp.com')}>
       <Resource name ="posts" list={PostList} create={PostCreate} edit={PostEdit}/>
       <Resource name ="users" list={UserList} create={UserCreate} edit={UserEdit}/>
     </Admin>
