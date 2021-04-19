@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import Form from './components/Form';
 import ToDoList from './components/ToDoList'
-import firebase from './util/firebase';
 
 function App() {
   return (
