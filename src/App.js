@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import Form from './components/Form';
-import ToDoList from './components/ToDoList'
+// import Form from './components/Form';
+// import ToDoList from './components/ToDoList';
+import TopBar from './components/TopBar';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <div >
-      <h1>Todo</h1>
-      <Form />
-      <ToDoList/>
+      <TopBar />
+      <Dashboard />
     </div>
   );
 }
