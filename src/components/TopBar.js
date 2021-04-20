@@ -29,7 +29,7 @@ const ContactChip = () => {
             <div class="chip">
                 <img src={Profile} alt="Person" width="96" height="96"></img>
                 Ethan Alvizo
-        </div>       
+            </div>       
         </>
     )
 }
