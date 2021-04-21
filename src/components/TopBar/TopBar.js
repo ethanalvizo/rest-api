@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import Profile from '../images/img_avatar.png';
+import Profile from '../../images/img_avatar.png';
 
 const ContactChip = () => {
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import firebase from '../util/firebase';
+import firebase from '../../util/firebase';
 
 export default function Form() {
     const [title, setTitle] = useState('');

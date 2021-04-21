@@ -15,7 +15,7 @@ const state = {
       data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 35, 30, 40]
     }
   ]
-}
+}   
 
 const MonthlyTrend = () => {
     return (
