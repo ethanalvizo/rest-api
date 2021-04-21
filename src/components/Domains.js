@@ -4,7 +4,6 @@ import RangeSlider from 'react-bootstrap-range-slider';
 
 const Domains = ({ name, rating = 1 }) => {
     const [ value, setValue ] = React.useState(rating);
-    console.log('name', name)
 
     return (
         <Form>
@@ -17,11 +16,13 @@ const Domains = ({ name, rating = 1 }) => {
                     value={value}
                     onChange={e => setValue(e.target.value)}
                     tooltip="off"
-                    min="1" max="5" step="1"
+                    min={1} 
+                    max={5} 
+                    step={1}
                 />
                 </Col>
                 <Col xs="3">
-                    <Form.Control value={value} style={{ backgroundColor: '#f8f9fa', border: 'none'}}/>
+                    <Form.Control value={value} readOnly style={{ backgroundColor: '#f8f9fa', border: 'none'}} />
                 </Col>
             </Form.Group>
         </Form>

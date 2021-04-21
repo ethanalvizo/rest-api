@@ -26,7 +26,7 @@ const ContactChip = () => {
                     }
                 `}
             </style>
-            <div class="chip">
+            <div className="chip">
                 <img src={Profile} alt="Person" width="96" height="96"></img>
                 Ethan Alvizo
             </div>       

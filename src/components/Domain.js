@@ -6,7 +6,7 @@ const Domain = () => {
     domains.push('Professional');
     domains.push('Guitar');
 
-    const output = domains.map((item) => <Domains name={item} /> );
+    const output = domains.map((item, index) => <Domains name={item} key={index} /> );
 
     return (
         <div>
