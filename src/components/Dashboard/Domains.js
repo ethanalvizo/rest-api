@@ -11,7 +11,7 @@ const Domains = ({ name, rating = 1 }) => {
                 {name}
             </Form.Label>
             <Form.Group as={Row}>
-                <Col xs="9">
+                <Col xs={10}>
                 <RangeSlider
                     value={value}
                     onChange={e => setValue(e.target.value)}
@@ -21,7 +21,7 @@ const Domains = ({ name, rating = 1 }) => {
                     step={1}
                 />
                 </Col>
-                <Col xs="3">
+                <Col xs={2}>
                     <Form.Control value={value} readOnly style={{ backgroundColor: '#f8f9fa', border: 'none'}} />
                 </Col>
             </Form.Group>

@@ -56,7 +56,8 @@ const RadarChart = () => {
                       // },
                       scale: {
                         reverse: false,
-                        gridLines: {
+                        angleLines: {
+                          display: false,
                         },
                         ticks: {
                           beginAtZero: true
