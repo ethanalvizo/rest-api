@@ -1,19 +1,18 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import {Line} from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 const state = {
-  labels: ['January', 'February', 'March',
-           'April', 'May'],
+  labels: ['Jan', '', 'Mar', '', 'May', '',
+           'Jul', '', 'Sep', '', 'Nov', ''],
   datasets: [
     {
-      label: 'Mood Rating',
-      fill: false,
+      fill: true,
       lineTension: 0.5,
-      backgroundColor: 'rgba(75,192,192,1)',
-      borderColor: 'rgba(0,0,0,1)',
+      backgroundColor: 'rgba(65,105,225,0.05)',
+      borderColor: 'rgba(65,105,225,1)',
       borderWidth: 2,
-      data: [65, 59, 80, 81, 56]
+      data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 35, 30, 40]
     }
   ]
 }
@@ -21,18 +20,27 @@ const state = {
 const MonthlyTrend = () => {
     return (
         <div>
-            <Card>
+            <Card style={{height: '300px', padding: '1em'}}>
                 <Line
                     data={state}
                     options={{
-                        title:{
-                        display:true,
-                        text:'Average Mood Rating',
-                        fontSize:20
-                        },
+                        maintainAspectRatio : false,
                         legend:{
-                            display:true,
-                            position:'right'
+                            display:false,
+ 
+                        },
+                        scales: {
+                            xAxes: [{
+                                gridLines: {
+                                   display: false
+                                }
+                             }],
+                             yAxes: [{
+                                gridLines: {
+                                    borderDash: [2],
+                                    colors: '#f8f9fa'
+                                }
+                            }]
                         }
                     }}
                 />
