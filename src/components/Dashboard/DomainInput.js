@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 
-const Domains = ({ name, onChange, rating = 1 }) => {
+const Domains = ({ domain, name, onChange, rating = 1 }) => {
     const [ value, setValue ] = React.useState(rating);
 
     const changeValue = (rating) => {
