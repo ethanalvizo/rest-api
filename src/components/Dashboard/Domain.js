@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DomainInput from './DomainInput';
+import firebase from '../../util/firebase';
+
 
 const Domain = () => {
-    let domains = [];
-    domains.push('Professional');
-    domains.push('Fitness');
-    domains.push('Family Time');
-    domains.push('Personal Time');
-    domains.push('Spirituality');
-    domains.push('Guitar');
+    const [domainList, setDomainList] = useState();
 
-    const output = domains.map((item, index) => <DomainInput name={item} key={index} className="w-100"/> );
+    useEffect(() => {
+        const domainRef = firebase.database().ref('Todo');
+        domainRef.on('value', (items) => {
+            const domains = items.val();
+            
+            const domainList = [];
+            for (let id in domains) {
+                domainList.push({id, ...domains[id]})
+            }
+
+            setDomainList(domainList);
+            console.log(domainList)
+        })
+    }, []);
+
+    const handleSliderChange = (name, e) => {
+        console.log(name, e)
+    }
 
     return (
         <div>
-            {output}
+            {domainList ? domainList.map((item, index) => <DomainInput name={item.title} onChange={handleSliderChange} key={index} className="w-100"/> ) : null}
             <form className="form-inline row">
                 <input type="text" className="form-control col-8 mr-2"  placeholder="Fitness, Hygiene, Studying, Screen Time..."></input>
                 <button className="btn btn-secondary col-3" type="submit" >Add Domain</button>

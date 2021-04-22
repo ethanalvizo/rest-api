@@ -4,7 +4,23 @@ import { Radar } from 'react-chartjs-2';
 
 
 const RadarChart = ({ googleData }) => {
-    const [data, setData] = useState();
+    const [data, setData] = useState({
+      labels: [
+        "Professional",
+        "Fitness",
+        "Family Time",
+        "Personal Time",
+        "Spirituality",
+        "Guitar"
+      ],
+      datasets: [
+        {
+          label: "Today",
+          backgroundColor: "rgba(220,220,220,0.2)",
+          pointBackgroundColor: "rgba(220,220,220,1)",
+        }
+      ]
+    });
 
     useEffect(() => {
       let dataSet = [];

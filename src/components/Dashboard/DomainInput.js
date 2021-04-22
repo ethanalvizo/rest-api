@@ -2,8 +2,13 @@ import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 
-const Domains = ({ name, rating = 1 }) => {
+const Domains = ({ name, onChange, rating = 1 }) => {
     const [ value, setValue ] = React.useState(rating);
+
+    const changeValue = (rating) => {
+        setValue(rating);
+        onChange(name, rating);
+    }
 
     return (
         <Form>
@@ -14,7 +19,7 @@ const Domains = ({ name, rating = 1 }) => {
                 <Col xs={10}>
                 <RangeSlider
                     value={value}
-                    onChange={e => setValue(e.target.value)}
+                    onChange={e => changeValue(e.target.value)}
                     tooltip="off"
                     min={1} 
                     max={5} 
