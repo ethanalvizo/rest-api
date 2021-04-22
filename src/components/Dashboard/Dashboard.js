@@ -2,7 +2,7 @@ import React from 'react';
 import Feelings from './Feelings.js';
 import Domain from './Domain';
 import MonthlyTrend from './MonthlyTrend.js';
-import Radar from './RadarChart';
+import RadarChart from './RadarChart';
 
 const Dashboard = () => {
     return (
@@ -22,7 +22,7 @@ const Dashboard = () => {
                         <Domain />
                     </div>
                     <div className="col-md-7 col-lg-8 p-5">
-                        <Radar />
+                        <RadarChart googleData={[4,2,1,5,6,3]}/>
                     </div>
                 </div>
             </div>       

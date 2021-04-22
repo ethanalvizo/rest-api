@@ -19,6 +19,7 @@ const Domains = ({ name, rating = 1 }) => {
                     min={1} 
                     max={5} 
                     step={1}
+                    variant="success"
                 />
                 </Col>
                 <Col xs={2}>
