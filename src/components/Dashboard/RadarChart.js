@@ -5,15 +5,13 @@ import { Radar } from 'react-chartjs-2';
 
 const RadarChart = ({ googleData }) => {
     const [data, setData] = useState();
-    const [state, setState] = useState({});
 
     useEffect(() => {
-      setData(googleData);
       let dataSet = [];
-      for (let num in data){
-        dataSet.push(data[num]);
+      for (let num in googleData){
+        dataSet.push(googleData[num]);
       }
-      setState({
+      setData({
         labels: [
           "Professional",
           "Fitness",
@@ -31,13 +29,13 @@ const RadarChart = ({ googleData }) => {
           }
         ]
       });
-    }, [data, googleData]);
+    }, [googleData]);
 
     return (
         <div>
             <Card style={{height: '500px', padding: '1em'}}>
                 <Radar
-                    data={state}
+                    data={data}
                     options={{
                       maintainAspectRatio : false,
                       legend: {
