@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
+import firebase from '../../util/firebase'
 import Feelings from './Feelings.js';
 import Domain from './Domain';
 import MonthlyTrend from './MonthlyTrend.js';
 import RadarChart from './RadarChart';
 
 const Dashboard = () => {
+    const [domainList, setDomainList] = useState();
+    const [rating, setRating] = useState([]);
+
+    useEffect(() => {
+        const domainRef = firebase.database().ref('Domain');
+        domainRef.on('value', (items) => {
+            const domains = items.val();
+            console.log('domains', domains)
+            
+            const domainList = [];
+            const rating = [];
+            for (let id in domains) {
+                domainList.push(domains[id].name)
+                rating.push(domains[id].rating)
+            }
+            setDomainList(domainList);
+            setRating(rating);
+        })
+    }, []);
+
+
     return (
         <>
             <div className="bg-light px-4">
@@ -22,7 +44,7 @@ const Dashboard = () => {
                         <Domain />
                     </div>
                     <div className="col-md-7 col-lg-8 p-5">
-                        <RadarChart googleData={[4,2,1,5,6,3]}/>
+                        <RadarChart domainList={domainList} googleData={rating}/>
                     </div>
                 </div>
             </div>       

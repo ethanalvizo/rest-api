@@ -3,16 +3,9 @@ import { Card } from 'react-bootstrap';
 import { Radar } from 'react-chartjs-2';
 
 
-const RadarChart = ({ googleData }) => {
+const RadarChart = ({ domainList = ["loading"], googleData }) => {
     const [data, setData] = useState({
-      labels: [
-        "Professional",
-        "Fitness",
-        "Family Time",
-        "Personal Time",
-        "Spirituality",
-        "Guitar"
-      ],
+      labels: domainList,
       datasets: [
         {
           label: "Today",
@@ -28,14 +21,7 @@ const RadarChart = ({ googleData }) => {
         dataSet.push(googleData[num]);
       }
       setData({
-        labels: [
-          "Professional",
-          "Fitness",
-          "Family Time",
-          "Personal Time",
-          "Spirituality",
-          "Guitar"
-        ],
+        labels: domainList,
         datasets: [
           {
             label: "Today",
@@ -45,7 +31,7 @@ const RadarChart = ({ googleData }) => {
           }
         ]
       });
-    }, [googleData]);
+    }, [domainList, googleData]);
 
     return (
         <div>

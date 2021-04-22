@@ -18,7 +18,6 @@ const Domain = () => {
             }
 
             setDomainList(domainList);
-            console.log(domainList)
         })
     }, []);
 
@@ -36,13 +35,9 @@ const Domain = () => {
         setName(e.target.value);
     }
 
-    const handleSliderChange = (name, e) => {
-        console.log(name, e)
-    }
-
     return (
         <div>
-            {domainList ? domainList.map((item, index) => <DomainInput domain={item} name={item.name} rating={item.rating} onChange={handleSliderChange} key={index} className="w-100"/> ) : null}
+            {domainList ? domainList.map((item, index) => <DomainInput domain={item} name={item.name} rating={item.rating} key={index} className="w-100"/> ) : null}
             <form className="form-inline row">
                 <input type="text" className="form-control col-8 mr-2"  placeholder="Fitness, Hygiene, Studying, Screen Time..." value={name} onChange={handleNameChange}></input>
                 <button className="btn btn-secondary col-3" type="submit" onClick={createDomain} >Add Domain</button>

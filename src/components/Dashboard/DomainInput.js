@@ -1,16 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import firebase from '../../util/firebase';
 import { Form, Row, Col } from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 
-const Domains = ({ domain, name, onChange, rating = 1 }) => {
-    console.log(rating)
-    const [ value, setValue ] = React.useState(rating);
+const Domains = ({ domain, name, rating = 1 }) => {
+    const [ value, setValue ] = useState(rating);
 
     const changeValue = (grade) => {
-        console.log('rating has changed')
         setValue(grade);
-        onChange(name, grade);
         const todoRef = firebase.database().ref('Domain').child(domain.id);
         todoRef.update({
             rating: grade
